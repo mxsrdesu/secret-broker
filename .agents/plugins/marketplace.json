@@ -1,0 +1,17 @@
+{
+  "name": "secret-broker",
+  "plugins": [
+    {
+      "name": "secret-broker",
+      "source": {
+        "source": "local",
+        "path": "./plugins/secret-broker"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

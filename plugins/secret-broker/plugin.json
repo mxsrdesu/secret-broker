@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "secret-broker",
+  "version": "0.1.0",
+  "description": "Use API keys without seeing them: one-time links to enter secrets, allowlisted commands, redacted output. Needs the secret-broker service on this machine.",
+  "homepage": "https://github.com/mxsrdesu/secret-broker",
+  "repository": "https://github.com/mxsrdesu/secret-broker",
+  "license": "MIT",
+  "keywords": ["secrets", "credentials", "api-keys", "mcp"]
+}

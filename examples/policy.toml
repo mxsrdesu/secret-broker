@@ -1,0 +1,22 @@
+# /etc/secret-broker/policy.toml
+# after editing: sudo systemctl reload secret-broker (it checks the file first)
+
+socket = "/run/secret-broker/sock"
+http_bind = "127.0.0.1:8787"                  # the page where you type values
+public_base_url = "http://127.0.0.1:8787"     # what links start with; see "the page" in the readme
+request_ttl_minutes = 15
+allowed_uids = [1000]                         # `id -u` of each user who runs agents
+
+backend = "agefile"                           # or "bws": bitwarden secrets manager
+
+[backends.agefile]
+dir = "/var/lib/secret-broker/store"
+identity = "/var/lib/secret-broker/age.key"   # created on first start
+
+# [backends.bws]
+# token_file = "/var/lib/secret-broker/bws-access-token"
+# project_id = "<project id>"                 # only when the machine account sees several projects
+# server_url = "https://vault.bitwarden.eu"   # only for the eu cloud
+
+[secrets.GH_TOKEN]
+allow = [["gh"]]                              # command prefixes this secret may go with

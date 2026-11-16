@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "secret-broker"
+version = "0.1.0"
+description = "Secret broker for coding agents: request secrets out-of-band, inject them only into allowlisted commands, redact output"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+dependencies = [
+  "mcp>=2.2",
+  "starlette>=0.40",
+  "uvicorn>=0.30",
+]
+
+[project.scripts]
+secret = "secret_broker.client:main"
+secret-brokerd = "secret_broker.daemon:main"
+
+[tool.setuptools.data-files]
+"share/man/man1" = ["man/secret.1"]
+
+[tool.setuptools.packages.find]
+include = ["secret_broker*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

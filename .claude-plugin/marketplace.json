@@ -1,0 +1,14 @@
+{
+  "name": "secret-broker",
+  "description": "secret-broker for Claude Code: the MCP server and the skill",
+  "owner": {
+    "name": "secret-broker"
+  },
+  "plugins": [
+    {
+      "name": "secret-broker",
+      "source": "./plugins/secret-broker",
+      "description": "Use API keys without seeing them: one-time links to enter secrets, allowlisted commands, redacted output"
+    }
+  ]
+}
